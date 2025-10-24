@@ -1,0 +1,26 @@
+files=["27-A.txt","27-B.txt"]
+for file in files:
+    with open(file) as f:
+        n=f.readline()
+        lst1=[0]*100
+        lst2=[0]*100
+        lst3=[0]*100
+        lst=[]
+        for line in f:
+            line=int(line)
+            lst.append(line)
+        for line in lst:
+            line=int(line)
+            if line%3==0:
+                lst1.append(line)
+            elif line%3==1:
+                lst2.append(line)
+            elif line%3==2:
+                lst3.append(line)
+        lst1.sort()
+        lst2.sort()
+        lst3.sort()
+        lst1=lst1[-3: :]
+        lst2=lst2[-3: :]
+        lst3=lst3[-3: :]
+        print(max(sum(lst1),sum(lst2),sum(lst3),lst1[-1]+lst2[-1]+lst3[-1]))

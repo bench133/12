@@ -1,0 +1,21 @@
+def f(x,dict):
+    for key,keybord in dict.items():
+        if key==x:
+            return keybord
+g=open('28131_B.txt')
+n=int(g.readline())
+numbers=[int(x) for x in g]
+i=0
+dict={}
+k=0
+maxk=0
+while i!=n:
+    for h in range(i+1,n):
+        if ((numbers[h]+numbers[i]) % 120 ==0) and (numbers[h] < numbers[i]) and (numbers.index(numbers[h]) > numbers.index(numbers[i])):
+            dict[numbers[h]+numbers[i]]=numbers[i],numbers[h]
+            k=numbers[h]+numbers[i]
+            maxk=max(k,maxk)
+    i=i+1
+if maxk==0:
+    print('00')
+else:print('максимальная сумма:',maxk,'.Искомые элементы:',f(maxk,dict))

@@ -15,7 +15,7 @@ while i!=n:
             dict[numbers[h]+numbers[i]]=numbers[i],numbers[h]
             k=numbers[h]+numbers[i]
             maxk=max(k,maxk)
-    i=i+1
+i=i+1
 if maxk==0:
     print('00')
 else:print('максимальная сумма:',maxk,'.Искомые элементы:',f(maxk,dict))
